@@ -27,7 +27,8 @@ export const QrCode = () => {
   return (
     <div>
       <h3>QR Code Generator</h3>
-      <input type="text" value={url} onChange={(e) => setUrl(e.target.value)} />
+     <div style={{height:'100%', display:'flex', flexDirection:'column', alignItems:'center',gap:'10px'}}>
+     <input type="text" value={url} onChange={(e) => setUrl(e.target.value)} />
       <button onClick={generateQrCode}>Generate</button>
       {qr && (
         <>
@@ -35,6 +36,7 @@ export const QrCode = () => {
           <button href={qr} download="qrcode.png">Download</button>
         </>
       )}
+     </div>
     </div>
   );
 };
